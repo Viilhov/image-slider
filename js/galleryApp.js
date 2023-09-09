@@ -11,7 +11,7 @@ createModal();
 // Global QS
 const modalableImages = document.querySelectorAll('[data-modal="true"]');
 const modalContainer = document.querySelector(".modal-container");
-const modalTrack = document.querySelector(".modal_image-container");
+const modalTrack = document.querySelector("modal__image-container");
 // all galleries shared
 let transitionSpeed;
 let galleries;
@@ -52,7 +52,26 @@ class Modal {
 const modal = new Modal(modalContainer);
 
 function addImagesAndIndicatiorsToGallery(arrayOfImages) {
-  console.log(arrayOfImages);
+  modalTrack.innerHTML = [
+    arrayOfImages[arrayOfImages.length - 1],
+    ...arrayOfImages,
+    arrayOfImages[0],
+  ]
+    .map((img) => `<img class="modal_image" src="${img.src}" alt="${img.alt}"`)
+    .join("");
+  // add indicator to Gallery
+  document.querySelector(".modal_indicator-container").innerHTML = arrayOfImages
+    .map(
+      (i, index) =>
+        `<button class="modal_indicator" data-index="${index}"></button>`
+    )
+    .join("");
+
+  // return both for destructuring
+  return [
+    [...document.querySelectorAll(".modal_image")],
+    [...document.querySelectorAll(".modal_indicator")],
+  ];
 }
 
 function updateGallery(galleryImages) {
