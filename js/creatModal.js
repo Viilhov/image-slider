@@ -1,5 +1,7 @@
-export default function createModal(){
-    document.querySelector('body').insertAdjacentHTML('beforeend', `
+export default function createModal() {
+  document.querySelector("body").insertAdjacentHTML(
+    "beforeend",
+    `
     <div class="modal-container" aria-modal="true" role="dialog" hidden="true">
       <div class="modal">
         <div class="modal__overlay">
@@ -24,24 +26,18 @@ export default function createModal(){
             </button>
           </div>
           <div class="modal__indicator-container">
-            <button class="modal__indicator active"></button>
-            <button class="modal__indicator"></button>
-            <button class="modal__indicator"></button>
+            
           </div>
         </div>
         
         <div class="modal__image-container">
-          <img src="./images/food/food-1.jpg" alt="Food" class="modal__image">
-          <img src="./images/food/food-2.jpg" alt="Food" class="modal__image">
-          <img src="./images/food/food-3.jpg" alt="Food" class="modal__image">
-          <img src="./images/food/food-4.jpg" alt="Food" class="modal__image">
-          <img src="./images/food/food-5.jpg" alt="Food" class="modal__image">
+          
         </div>
       </div>
     </div>
     <style>
       .modal-container {
-        position: absolute;
+        position: fixed;
         inset: 0;
         background-color: hsl(var(--dark) / .8);
         display: grid;
@@ -149,22 +145,6 @@ export default function createModal(){
         background-color: hsl(var(--bkg) / .9);
       }
     </style>
-    `)
-  }
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+    `
+  );
+}

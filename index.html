@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/style.css">
-  <script defer src="./js/galleryApp.js" type="module"></script>
+
   <title>Popup Image Slider</title>
 </head>
+
 <body>
   <div class="container">
     <div class="image-container">
@@ -21,5 +23,12 @@
       </button>
     </div>
   </div>
+  <script type="module">
+    import initGallery from "./js/galleryApp.js";
+    initGallery('./data/galleries.json', {
+      speed: 400,
+    })
+  </script>
 </body>
+
 </html>
